@@ -35,19 +35,20 @@ int countMonth(int startDay, int daysNumber, const char* name) {
 
 int main() {
     setlocale(LC_ALL, "ru");
-    int numberDay, February;
+
+    int numberDay, february;
     int week = 7, year = 1900, highYear = 366, lowYear = 365;
     cout << "Введите год: ";
     cin >> numberDay;
     if ((numberDay % 4 == 0 && numberDay % 100 != 0) || numberDay % 400 == 0) {//високосный год
-        February = 29;
+        february = 29;
     } else {
-        February = 28;
+        february = 28;
     }
 
-    int leapYears, years, days, b;
+    int leapYears, years, days, startDay;
 
-    years = a - year;
+    years = numberDay - year;
     leapYears = (years - 1) / 4;
 
     if ((numberDay % 4 == 0 && numberDay % 100 != 0) || numberDay % 400 == 0) {//високосный год
@@ -57,21 +58,21 @@ int main() {
         days = years * lowYear + leapYears;
     }
 
-    b = days % week;
+    startDay = days % week;
     cout << endl;
 
-    b = countMonth(b, 31, "Январь");
-    b = countMonth(b, Feb, "Февраль");
-    b = countMonth(b, 31, "Март");
-    b = countMonth(b, 30, "Апрель");
-    b = countMonth(b, 31, "Май");
-    b = countMonth(b, 30, "Июнь");
-    b = countMonth(b, 31, "Июль");
-    b = countMonth(b, 31, "Август");
-    b = countMonth(b, 30, "Сентябрь");
-    b = countMonth(b, 31, "Октябрь");
-    b = countMonth(b, 30, "Ноябрь");
-    b = countMonth(b, 31, "Декабрь");
+    startDay = countMonth(startDayb, 31, "Январь");
+    startDay = countMonth(startDay, february, "Февраль");
+    startDay = countMonth(startDay, 31, "Март");
+    startDay = countMonth(startDay, 30, "Апрель");
+    startDay = countMonth(startDay, 31, "Май");
+    startDay = countMonth(startDay, 30, "Июнь");
+    startDay = countMonth(startDay, 31, "Июль");
+    startDay = countMonth(startDay, 31, "Август");
+    startDay = countMonth(startDay, 30, "Сентябрь");
+    startDay = countMonth(startDay, 31, "Октябрь");
+    startDay = countMonth(startDay, 30, "Ноябрь");
+    startDay = countMonth(startDay, 31, "Декабрь");
     system("pause");
 }
 
